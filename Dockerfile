@@ -19,6 +19,8 @@ COPY src ./src
 COPY tests ./tests
 
 # Configure and build dependencies
+ENV CC=clang
+ENV CXX=clang++
 RUN cmake -S . -B build-deps
 
 COPY run_tests.sh ./
